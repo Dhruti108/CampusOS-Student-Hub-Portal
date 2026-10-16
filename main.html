@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* CSS */
+.flex-container {
+  display: flex;
+  flex-direction: row; /* Aligns items horizontally */
+  justify-content: space-between; /* Distributes space between items */
+  align-items: center; /* Centers items vertically */
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  gap: 15px; /* Adds space between items */
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.flex-item {
+  flex: 1; /* Makes items grow equally */
+  min-width: 150px;
+  padding: 20px;
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+}
+.grid-container {
+  display: grid; /* Initializes the grid context */
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns using fraction units (fr) */
+  gap: 20px; /* Adds 20px spacing between all rows and columns */
+}
+
+.grid-item {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Base Layout Configuration */
+.grid-table {
+  display: grid;
+  /* Creates 4 columns: first is narrow, next two split space, last is fixed */
+  grid-template-columns: 80px 2fr 2fr 120px;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Header Styling */
+.table-header {
+  background-color: #f4f6f9;
+  color: #333333;
+  font-weight: 600;
+  padding: 14px 16px;
+  border-bottom: 2px solid #e0e0e0;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* Cell Styling */
+.table-cell {
+  padding: 14px 16px;
+  color: #4a4a4a;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center; /* Vertically centers text inside cell */
+  border-bottom: 1px solid #eeeeee;
+  background-color: #ffffff;
+}
+
+/* Subtle Row Hover Effect */
+.table-cell:hover {
+  background-color: #f9fbfd;
+}
+
+/* Helper Utilities */
+.font-bold {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Status Badges */
+.badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.badge.active {
+  background-color: #e6f4ea;
+  color: #137333;
+}
+.badge.inactive {
+  background-color: #fce8e6;
+  color: #c5221f;
+}
+
+/* Responsive Tweak for Mobile Screens */
+@media (max-width: 600px) {
+  .grid-table {
+    /* Changes 4 columns into a single column stacking system */
+    grid-template-columns: 1fr; 
+    border: none;
+  }
+  .table-header {
+    display: none; /* Hides headers on mobile */
+  }
+  .table-cell {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px;
+  }
+}
+.container {
+            position: relative;
+            height: 200px;
+        }
+        .box1 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 150px;
+            height: 150px;
+            background-color: #ff4d4d;
+            /* Lower z-index stays behind */
+            z-index: 1; 
+        }
+
+        .box2 {
+            position: absolute;
+            top: 60px;
+            left: 60px;
+            width: 150px;
+            height: 150px;
+            background-color: #007bff;
+            /* Higher z-index stack on top */
+            z-index: 2; 
+        }
+         body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+
+        /* ─── STICKY NAVIGATION BAR ─── */
+        .navbar {
+            position: fixed;       /* Keeps nav locked at the top of the viewport */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #1a1a2e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            
+            /* CRITICAL: High z-index ensures it floats above all scrolling page content */
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #eeeeee;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00adb5;
+        }
+
+        /* ─── PAGE CONTENT (For scrolling demonstration) ─── */
+        .content {
+            margin-top: 80px; /* Prevents navigation from covering the top text */
+            padding: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Overlapping test element */
+        .banner-image {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #00adb5, #393e46);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            
+            /* Lower z-index so it safely slides UNDER the navigation when scrolling */
+            z-index: 1; 
+        }
+
+        .dummy-text {
+            line-height: 1.6;
+            color: #333333;
+        }
+</style>
+</head>
+<body>
+  <h1>hello</h1>
+<!-- HTML -->
+<div class="flex-container">
+  <div class="flex-item">Item 1</div>
+  <div class="flex-item">Item 2</div>
+  <div class="flex-item">Item 3</div>
+</div>
+<div class="grid-container">
+  <div class="grid-item">1</div>
+  <div class="grid-item">2</div>
+  <div class="grid-item">3</div>
+  <div class="grid-item">4</div>
+</div>
+<div class="grid-table">
+  <!-- Table Header -->
+  <div class="table-header">ID</div>
+  <div class="table-header">Name</div>
+  <div class="table-header">Role</div>
+  <div class="table-header">Status</div>
+
+  <!-- Row 1 -->
+  <div class="table-cell">#101</div>
+  <div class="table-cell font-bold">Alice Vance</div>
+  <div class="table-cell">Designer</div>
+  <div class="table-cell"><span class="badge active">Active</span></div>
+
+  <!-- Row 2 -->
+  <div class="table-cell">#102</div>
+  <div class="table-cell font-bold">Bob Smith</div>
+  <div class="table-cell">Developer</div>
+  <div class="table-cell"><span class="badge active">Active</span></div>
+
+  <!-- Row 3 -->
+  <div class="table-cell">#103</div>
+  <div class="table-cell font-bold">Charlie Roy</div>
+  <div class="table-cell">Manager</div>
+  <div class="table-cell"><span class="badge inactive">Offline</span></div>
+</div>
+
+<div class="container">
+        <div class="box1">Box 1 (z-index: 1)</div>
+        <div class="box2">Box 2 (z-index: 2)</div>
+    </div>
+
+    <h2>Registration Form</h2>
+
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="Reha" required>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="Reha@gmail.com" required>
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"required>
+        <br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"value="18" >
+        <br><br>
+
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <br><br>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+        </select>
+        <br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="30"></textarea>
+        <br><br>
+
+        <input type="checkbox" id="terms" name="terms">
+        <label for="terms">I agree to the terms</label>
+        <br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+    </form>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">MyBrand</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Page Content -->
+    <main class="content">
+        <div class="banner-image">
+            Visual Banner Layer (z-index: 1)
+        </div>
+        
+        <h2>Scroll Down to Test</h2>
+        <div class="dummy-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+            <p>As you scroll this text up, notice how it vanishes cleanly underneath the navbar.</p>
+            <!-- Repeating paragraphs to enable scrolling -->
+            <p style="margin-bottom: 500px;">[Scrolling Space Holder]</p>
+            <p>You have reached the bottom! The header remained locked in place the entire time.</p>
+        </div>
+    </main>
+   
+
+</body>
+<footer>
+  <h1>&lt</h1>
+   <h1>&gt</h1>
+    <h1>&copy;</h1>
+    <h1>&reg</h1>
+    <h6 align='center'>&copy;2026 copyright reserved for reha</h6>
+</footer>
+</html>

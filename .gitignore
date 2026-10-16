@@ -1,0 +1,9 @@
+db.php
+.env
+.env.*
+!.env.example
+uploads/*
+!uploads/.gitkeep
+testdb.php
+.DS_Store
+Thumbs.db

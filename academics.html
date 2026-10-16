@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Academics - CampusOS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="academics.js"></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            <font size="5"><i>CampusOS</i></font>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="academics.html">Academics</a>
+            <a href="campus-services.html">Campus Services</a>
+            <a href="faq.html">FAQs</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+            <a href="feedback.html">Feedback</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="academic-title">
+
+            <h1>Academic Center</h1>
+
+            <p>Everything you need for your semester in one place.</p>
+
+        </section>
+
+        <section class="subjects">
+
+            <h2>My Subjects</h2>
+
+            <div class="subject-list">
+
+                <div class="subject-card">
+                    <h3>Data Structures</h3>
+                    <p>Course Code: CSE301</p>
+                    <p>Credits: 4</p>
+                    <p>Faculty: Prof. Mehta</p>
+                    <a href="#">View Subject</a>
+                </div>
+
+                <div class="subject-card">
+                    <h3>Java Programming</h3>
+                    <p>Course Code: CSE302</p>
+                    <p>Credits: 4</p>
+                    <p>Faculty: Prof. Shah</p>
+                    <a href="#">View Subject</a>
+                </div>
+
+                <div class="subject-card">
+                    <h3>Computer Networks</h3>
+                    <p>Course Code: CSE303</p>
+                    <p>Credits: 3</p>
+                    <p>Faculty: Prof. Patel</p>
+                    <a href="#">View Subject</a>
+                </div>
+
+                <div class="subject-card">
+                    <h3>Database Management</h3>
+                    <p>Course Code: CSE304</p>
+                    <p>Credits: 3</p>
+                    <p>Faculty: Prof. Joshi</p>
+                    <a href="#">View Subject</a>
+                </div>
+
+                <div class="subject-card">
+                    <h3>Web Development</h3>
+                    <p>Course Code: CSE305</p>
+                    <p>Credits: 3</p>
+                    <p>Faculty: Prof. Desai</p>
+                    <a href="#">View Subject</a>
+                </div>
+
+                <div class="subject-card">
+                    <h3>Software Engineering</h3>
+                    <p>Course Code: CSE306</p>
+                    <p>Credits: 3</p>
+                    <p>Faculty: Prof. Trivedi</p>
+                    <a href="#">View Subject</a>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="timetable">
+
+            <h2>Weekly Timetable</h2>
+
+            <table width="100%" border="1" cellpadding="15" cellspacing="0">
+
+                <tr>
+                    <th>Time</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                </tr>
+
+                <tr>
+                    <td>09:00 - 10:00</td>
+                    <td>Data Structures</td>
+                    <td>Java</td>
+                    <td>Web Development</td>
+                    <td>Computer Networks</td>
+                    <td>Database</td>
+                </tr>
+
+                <tr>
+                    <td>10:00 - 11:00</td>
+                    <td>Java</td>
+                    <td>Data Structures</td>
+                    <td>Database</td>
+                    <td>Web Development</td>
+                    <td>Software Engineering</td>
+                </tr>
+
+                <tr>
+                    <td>11:00 - 12:00</td>
+                    <td>Computer Networks</td>
+                    <td>Database</td>
+                    <td>Java</td>
+                    <td>Data Structures</td>
+                    <td>Web Development</td>
+                </tr>
+
+                <tr>
+                    <td>12:00 - 01:00</td>
+                    <td colspan="5" align="center">Lunch Break</td>
+                </tr>
+
+                <tr>
+                    <td>01:00 - 02:00</td>
+                    <td>Web Development Lab</td>
+                    <td>Java Lab</td>
+                    <td>Data Structures Lab</td>
+                    <td>Database Lab</td>
+                    <td>Project Work</td>
+                </tr>
+
+            </table>
+
+        </section>
+        <section class="upcoming-events">
+
+    <h2>Upcoming Events</h2>
+
+    <input type="text" id="search" placeholder="Search event">
+    <button onclick="searchEvent()">Search</button>
+
+    <div id="event-list"></div>
+
+</section>
+
+        <section class="subjects">
+
+    <h2>My Subjects</h2>
+
+    <div class="subject-list">
+
+        <div class="subject-card">
+            <h3>Data Structures</h3>
+            <p>Course Code: CSE301</p>
+            <p>Credits: 4</p>
+            <p>Faculty: Prof. Mehta</p>
+            <a href="#">View Subject</a>
+        </div>
+
+        <div class="subject-card">
+            <h3>Java Programming</h3>
+            <p>Course Code: CSE302</p>
+            <p>Credits: 4</p>
+            <p>Faculty: Prof. Shah</p>
+            <a href="#">View Subject</a>
+        </div>
+
+        <div class="subject-card">
+            <h3>Computer Networks</h3>
+            <p>Course Code: CSE303</p>
+            <p>Credits: 3</p>
+            <p>Faculty: Prof. Patel</p>
+            <a href="#">View Subject</a>
+        </div>
+
+        <div class="subject-card">
+            <h3>Database Management</h3>
+            <p>Course Code: CSE304</p>
+            <p>Credits: 3</p>
+            <p>Faculty: Prof. Joshi</p>
+            <a href="#">View Subject</a>
+        </div>
+
+        <div class="subject-card">
+            <h3>Web Development</h3>
+            <p>Course Code: CSE305</p>
+            <p>Credits: 3</p>
+            <p>Faculty: Prof. Desai</p>
+            <a href="#">View Subject</a>
+        </div>
+
+        <div class="subject-card">
+            <h3>Software Engineering</h3>
+            <p>Course Code: CSE306</p>
+            <p>Credits: 3</p>
+            <p>Faculty: Prof. Trivedi</p>
+            <a href="#">View Subject</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+        <section class="assignments">
+
+            <h2>Assignment Tracker</h2>
+
+            <table width="100%" border="1" cellpadding="15" cellspacing="0">
+
+                <tr>
+                    <th>Assignment</th>
+                    <th>Subject</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr>
+                    <td>Linked List Implementation</td>
+                    <td>Data Structures</td>
+                    <td>20 September</td>
+                    <td>Pending</td>
+                </tr>
+
+                <tr>
+                    <td>Exception Handling Program</td>
+                    <td>Java Programming</td>
+                    <td>22 September</td>
+                    <td>Pending</td>
+                </tr>
+
+                <tr>
+                    <td>Network Configuration</td>
+                    <td>Computer Networks</td>
+                    <td>24 September</td>
+                    <td>Submitted</td>
+                </tr>
+
+                <tr>
+                    <td>Database Design</td>
+                    <td>Database Management</td>
+                    <td>26 September</td>
+                    <td>In Progress</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+        <section class="academic-tools">
+
+            <h2>Academic Tools</h2>
+
+            <div class="tool-list">
+
+                <div>
+                    <h3>📚 Study Materials</h3>
+                    <p>Access notes and learning resources.</p>
+                    <a href="#">Open Materials</a>
+                </div>
+
+                <div>
+                    <h3>📄 Previous Papers</h3>
+                    <p>Practice using previous examination papers.</p>
+                    <a href="#">View Papers</a>
+                </div>
+
+                <div>
+                    <h3>📊 Grade Calculator</h3>
+                    <p>Calculate your expected semester grade.</p>
+                    <a href="#">Calculate Grade</a>
+                </div>
+
+                <div>
+                    <h3>📅 Academic Calendar</h3>
+                    <p>View important academic dates.</p>
+                    <a href="#">Open Calendar</a>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <h3>CampusOS</h3>
+
+        <p>Your One-Stop Student Hub Portal</p>
+
+        <p>
+            <a href="index.html">Home</a> |
+            <a href="dashboard.html">Dashboard</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="feedback.html">Feedback</a>
+        </p>
+
+        <p>© 2026 CampusOS Student Hub Portal | All Rights Reserved</p>
+
+    </footer>
+
+</body>
+
+</html>

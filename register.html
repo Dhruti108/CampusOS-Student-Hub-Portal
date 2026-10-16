@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register - CampusOS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            <font size="5"><i>CampusOS</i></font>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="register-section">
+
+            <div class="register-info">
+
+                <h1>Create Your Account</h1>
+
+                <p>
+                    Join CampusOS and access your academic information,
+                    campus services, announcements, and student resources
+                    from one place.
+                </p>
+
+                <h2>Why Register?</h2>
+
+                <p>📚 Access academic resources</p>
+                <p>📢 View important announcements</p>
+                <p>🏫 Explore campus services</p>
+                <p>💬 Get student support</p>
+
+            </div>
+
+            <div class="register-form">
+
+                <h1>Create Account</h1>
+
+                <p>Enter your details to get started</p>
+
+                <form id="registerForm" action="process.php" method="POST">
+
+                    <input type="hidden" name="form_type" value="registration">
+
+                    <label for="firstname">First Name</label>
+                    <br>
+                    <input type="text"
+                           id="firstname"
+                           name="firstname"
+                           size="40"
+                           placeholder="Enter your first name"
+                           required>
+
+                    <br><br>
+
+                    <label for="lastname">Last Name</label>
+                    <br>
+                    <input type="text"
+                           id="lastname"
+                           name="lastname"
+                           size="40"
+                           placeholder="Enter your last name"
+                           required>
+
+                    <br><br>
+
+                    <label for="email">E-Mail</label>
+                    <br>
+                    <input type="email"
+                           id="email"
+                           name="email"
+                           size="40"
+                           placeholder="Enter your email"
+                           required>
+
+                    <br><br>
+
+                    <label for="enrollment">Enrollment ID</label>
+                    <br>
+                    <input type="text"
+                           id="enrollment"
+                           name="enrollment"
+                           size="40"
+                           placeholder="Enter your enrollment ID"
+                           required>
+
+                    <br><br>
+
+                    <label for="password">Password</label>
+                    <br>
+                    <input type="password"
+                           id="password"
+                           name="password"
+                           size="40"
+                           placeholder="Create a password"
+                           required>
+
+                    <br><br>
+
+                    <label for="confirm_password">Confirm Password</label>
+                    <br>
+                    <input type="password"
+                           id="confirm_password"
+                           name="confirm_password"
+                           size="40"
+                           placeholder="Confirm your password"
+                           required>
+
+                    <br><br>
+
+                    <input type="submit" value="Create Account">
+
+                </form>
+
+                <p>
+                    Already have an account?
+                    <a href="login.html">Login Here</a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <h3>CampusOS</h3>
+
+        <p>Your One-Stop Student Hub Portal</p>
+
+        <p>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="login.html">Login</a>
+        </p>
+
+        <p>© 2026 CampusOS Student Hub Portal | All Rights Reserved</p>
+
+    </footer>
+
+</body>
+
+</html>
+

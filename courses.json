@@ -1,0 +1,32 @@
+[
+    {
+        "course": "Fundamentals of DSA",
+        "faculty": "Dr. Amit Thakkar",
+        "credits": 4,
+        "lectures": 3
+    },
+    {
+        "course": "Object Oriented Programming",
+        "faculty": "Mr. Siddharth Shah",
+        "credits": 3,
+        "lectures": 2
+    },
+    {
+        "course": "Web Development Frameworks",
+        "faculty": "Ms. Pooja Singh Chaudhary",
+        "credits": 5,
+        "lectures": 3
+    },
+    {
+        "course": "Fundamentals of Computer Networks",
+        "faculty": "Dr. Amit Nayak",
+        "credits": 5,
+        "lectures": 4
+    },
+    {
+        "course": "Discrete Mathematics",
+        "faculty": "Dr. Rajesh Savaliya",
+        "credits": 3,
+        "lectures": 3
+    }
+]

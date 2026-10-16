@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusOS Event API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff7f9;
+            color: #6d1f3a;
+            padding: 25px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        input, textarea, button {
+            padding: 10px;
+            margin: 6px 0;
+            box-sizing: border-box;
+        }
+
+        input, textarea {
+            width: 100%;
+        }
+
+        button {
+            background: #8f3453;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .event {
+            border: 1px solid #e5c7d2;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 6px;
+        }
+
+        #message {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>CampusOS Event Management</h1>
+    <p id="message">Loading events...</p>
+
+    <h2 id="formTitle">Add Event</h2>
+
+    <form id="eventForm">
+        <input type="hidden" id="event_id">
+
+        <label for="event_name">Event Name</label>
+        <input type="text" id="event_name" required>
+
+        <label for="event_date">Event Date</label>
+        <input type="date" id="event_date" required>
+
+        <label for="location">Location</label>
+        <input type="text" id="location" required>
+
+        <label for="description">Description</label>
+        <textarea id="description" rows="3"></textarea>
+
+        <button type="submit">Save Event</button>
+        <button type="button" id="cancelButton" hidden>Cancel Edit</button>
+    </form>
+
+    <h2>All Events</h2>
+    <div id="events"></div>
+</div>
+
+<script>
+const api = "events-api.php";
+const form = document.getElementById("eventForm");
+const message = document.getElementById("message");
+const eventsDiv = document.getElementById("events");
+
+async function requestAPI(method, data = null) {
+    const options = { method };
+
+    if (data !== null) {
+        options.headers = { "Content-Type": "application/json" };
+        options.body = JSON.stringify(data);
+    }
+
+    const response = await fetch(api, options);
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+        throw new Error(result.message || "Request failed.");
+    }
+
+    return result;
+}
+
+async function loadEvents() {
+    try {
+        const result = await requestAPI("GET");
+        eventsDiv.replaceChildren();
+
+        if (result.data.length === 0) {
+            eventsDiv.textContent = "No events found.";
+            return;
+        }
+
+        result.data.forEach(event => {
+            const card = document.createElement("div");
+            card.className = "event";
+
+            const title = document.createElement("h3");
+            title.textContent = event.event_name;
+
+            const details = document.createElement("p");
+            details.textContent =
+                "Date: " + event.event_date +
+                " | Location: " + event.location;
+
+            const description = document.createElement("p");
+            description.textContent = event.description || "No description";
+
+            const editButton = document.createElement("button");
+            editButton.textContent = "Edit";
+            editButton.addEventListener("click", () => editEvent(event));
+
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.addEventListener("click", () => deleteEvent(event.event_id));
+
+            card.append(title, details, description, editButton, deleteButton);
+            eventsDiv.appendChild(card);
+        });
+    } catch (error) {
+        message.textContent = error.message;
+    }
+}
+
+function editEvent(event) {
+    document.getElementById("event_id").value = event.event_id;
+    document.getElementById("event_name").value = event.event_name;
+    document.getElementById("event_date").value = event.event_date;
+    document.getElementById("location").value = event.location;
+    document.getElementById("description").value = event.description || "";
+
+    document.getElementById("formTitle").textContent = "Update Event";
+    document.getElementById("cancelButton").hidden = false;
+    window.scrollTo(0, 0);
+}
+
+function resetForm() {
+    form.reset();
+    document.getElementById("event_id").value = "";
+    document.getElementById("formTitle").textContent = "Add Event";
+    document.getElementById("cancelButton").hidden = true;
+}
+
+document.getElementById("cancelButton").addEventListener("click", resetForm);
+
+form.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const id = document.getElementById("event_id").value;
+
+    const data = {
+        event_name: document.getElementById("event_name").value.trim(),
+        event_date: document.getElementById("event_date").value,
+        location: document.getElementById("location").value.trim(),
+        description: document.getElementById("description").value.trim()
+    };
+
+    try {
+        const result = id
+            ? await requestAPI("PUT", { ...data, event_id: Number(id) })
+            : await requestAPI("POST", data);
+
+        message.textContent = result.message;
+        resetForm();
+        await loadEvents();
+    } catch (error) {
+        message.textContent = error.message;
+    }
+});
+
+async function deleteEvent(id) {
+    if (!confirm("Are you sure you want to delete this event?")) {
+        return;
+    }
+
+    try {
+        const result = await requestAPI("DELETE", { event_id: Number(id) });
+        message.textContent = result.message;
+        await loadEvents();
+    } catch (error) {
+        message.textContent = error.message;
+    }
+}
+
+loadEvents();
+</script>
+</body>
+</html>

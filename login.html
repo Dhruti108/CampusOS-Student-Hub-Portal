@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login - CampusOS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            <font size="5"><i>CampusOS</i></font>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="login-section">
+
+            <div class="login-image">
+
+                <img src="Images/image1.png"
+                     width="350"
+                     height="350"
+                     alt="Welcome to CampusOS">
+
+                <h1>WELCOME TO CampusOS</h1>
+
+                <p>Your complete student hub portal</p>
+
+            </div>
+
+            <div class="login-form">
+
+                <h1>Login to Your Account</h1>
+
+                <p>Enter your account details to continue</p>
+
+                <br>
+
+                <label for="username">Username</label>
+                <br>
+                <input type="text"
+                       id="username"
+                       name="username"
+                       size="40"
+                       placeholder="Enter your username">
+
+                <br><br>
+
+                <label for="password">Password</label>
+                <br>
+                <input type="password"
+                       id="password"
+                       name="password"
+                       size="40"
+                       placeholder="Enter your password">
+
+                <br><br>
+
+                <input type="button"
+                       value="Login"
+                       onclick="login()">
+
+                <br><br>
+
+                <p>
+                    Don't have an account?
+                    <a href="register.html">Create an Account</a>
+                </p>
+
+                <p>
+                    <a href="index.html">Back to Home</a>
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="login-info">
+
+            <h2>Why Login to CampusOS?</h2>
+
+            <div class="login-grid">
+
+                <div class="login-card">
+                    <h3>📚 Academic Information</h3>
+                    <p>Access your academic resources and course information.</p>
+                </div>
+
+                <div class="login-card">
+                    <h3>📢 Student Updates</h3>
+                    <p>Stay updated with important announcements and events.</p>
+                </div>
+
+                <div class="login-card">
+                    <h3>🏫 Campus Services</h3>
+                    <p>Explore useful campus facilities and student services.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="popup" class="popup">
+
+        <div class="popup-box">
+
+            <h2>CampusOS</h2>
+
+            <p id="popupMessage"></p>
+
+            <button onclick="closePopup()">OK</button>
+
+        </div>
+
+    </div>
+
+    <footer>
+
+        <h3>CampusOS</h3>
+
+        <p>Your One-Stop Student Hub Portal</p>
+
+        <p>© 2026 CampusOS Student Hub Portal | All Rights Reserved</p>
+
+    </footer>
+
+</body>
+
+</html>

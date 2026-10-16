@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact Us - CampusOS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            <font size="5"><i>CampusOS</i></font>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="academics.html">Academics</a>
+            <a href="campus-services.html">Campus Services</a>
+            <a href="faq.html">FAQs</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+            <a href="feedback.html">Feedback</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="contact-header">
+
+            <h1>Contact CampusOS</h1>
+
+            <p>
+                Have a question or need assistance?
+                Our support team is here to help.
+            </p>
+
+        </section>
+
+        <section class="contact-options">
+
+            <h2>How Can We Help?</h2>
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+                    <h3>📧 Email Support</h3>
+                    <p>Send us your questions or problems.</p>
+                    <p><b>Email:</b> campusos@gmail.com</p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>📞 Phone Support</h3>
+                    <p>Talk to our student support team.</p>
+                    <p><b>Phone:</b> +91 98765 43210</p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>📍 Campus Office</h3>
+                    <p>Visit the CampusOS support office.</p>
+                    <p><b>Location:</b> Main Administration Building</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="contact-form-section">
+
+            <h2>Send Us a Message</h2>
+
+            <p>Fill out the form below and our team will get back to you.</p>
+
+            <form action="process.php" method="POST">
+
+                <input type="hidden" name="form_type" value="contact">
+
+                <label for="name">Full Name</label>
+                <br>
+                <input type="text"
+                       id="name"
+                       name="name"
+                       placeholder="Enter your name"
+                       required>
+
+                <br><br>
+
+                <label for="email">Email Address</label>
+                <br>
+                <input type="email"
+                       id="email"
+                       name="email"
+                       placeholder="Enter your email"
+                       required>
+
+                <br><br>
+
+                <label for="studentid">Student ID</label>
+                <br>
+                <input type="text"
+                       id="studentid"
+                       name="studentid"
+                       placeholder="Enter your student ID"
+                       required>
+
+                <br><br>
+
+                <label for="category">Reason for Contact</label>
+                <br>
+
+                <select id="category" name="category" required>
+
+                    <option value="">Select a category</option>
+                    <option value="academic">Academic Issue</option>
+                    <option value="account">Account/Login Issue</option>
+                    <option value="campus">Campus Service</option>
+                    <option value="technical">Technical Problem</option>
+                    <option value="other">Other</option>
+
+                </select>
+
+                <br><br>
+
+                <label for="message">Message</label>
+                <br>
+
+                <textarea id="message"
+                          name="message"
+                          rows="8"
+                          cols="60"
+                          placeholder="Enter your message here..."
+                          required></textarea>
+
+                <br><br>
+
+                <input type="submit" value="Send Message">
+
+            </form>
+
+        </section>
+
+        <section class="office-info">
+
+            <h2>Support Office Information</h2>
+
+            <table width="100%" border="1" cellpadding="15" cellspacing="0">
+
+                <tr>
+                    <th>Department</th>
+                    <th>Location</th>
+                    <th>Working Hours</th>
+                    <th>Contact</th>
+                </tr>
+
+                <tr>
+                    <td>Student Support</td>
+                    <td>Main Administration Building</td>
+                    <td>9:00 AM - 5:00 PM</td>
+                    <td>campusos@gmail.com</td>
+                </tr>
+
+                <tr>
+                    <td>Academic Office</td>
+                    <td>Academic Block</td>
+                    <td>10:00 AM - 4:00 PM</td>
+                    <td>academics@campusos.com</td>
+                </tr>
+
+                <tr>
+                    <td>Technical Support</td>
+                    <td>Computer Center</td>
+                    <td>9:00 AM - 6:00 PM</td>
+                    <td>support@campusos.com</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+        <section class="faq-link" align="center">
+
+            <h2>Looking for Quick Answers?</h2>
+
+            <p>
+                Check our frequently asked questions before contacting support.
+            </p>
+
+            <a href="faq.html">Visit FAQs</a>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <h3>CampusOS</h3>
+
+        <p>Your One-Stop Student Hub Portal</p>
+
+        <p>
+            <a href="index.html">Home</a> |
+            <a href="dashboard.html">Dashboard</a> |
+            <a href="academics.html">Academics</a> |
+            <a href="faq.html">FAQs</a>
+        </p>
+
+        <p>© 2026 CampusOS Student Hub Portal | All Rights Reserved</p>
+
+    </footer>
+
+</body>
+
+</html>
+

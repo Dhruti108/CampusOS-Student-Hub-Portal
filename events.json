@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Hackathon",
+        "date": "20 September 2026",
+        "place": "Main Hall",
+        "description": "A technical event where students can participate in coding and innovation activities."
+    },
+    {
+        "name": "Sports Day",
+        "date": "25 September 2026",
+        "place": "College Ground",
+        "description": "A sports event with different indoor and outdoor games for students."
+    },
+    {
+        "name": "Cultural Fest",
+        "date": "30 September 2026",
+        "place": "College Auditorium",
+        "description": "A cultural event with music, dance and other student performances."
+    }
+]

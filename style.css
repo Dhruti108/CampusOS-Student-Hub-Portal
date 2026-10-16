@@ -1,0 +1,545 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8e8ed;
+    color: #432b32;
+}
+
+.navbar {
+    background: #6d1f3a;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #f4c5d2;
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+h1 {
+    color: #6d1f3a;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #8f3453;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #6d1f3a;
+}
+
+p {
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+a {
+    color: #8f3453;
+    text-decoration: none;
+}
+
+button,
+input[type="submit"],
+input[type="button"] {
+    background: #8f3453;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background: #6d1f3a;
+}
+
+input,
+textarea,
+select {
+    padding: 10px;
+    border: 1px solid #d6a6b5;
+    border-radius: 5px;
+    background: #fff7f9;
+    max-width: 100%;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #8f3453;
+}
+
+.hero,
+.login-section,
+.register-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 30px;
+    background: #fff7f9;
+    border-radius: 10px;
+}
+
+.hero-content,
+.hero-image,
+.login-image,
+.login-form,
+.register-info,
+.register-form {
+    flex: 1;
+}
+
+.hero-image img,
+.login-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.feature-grid,
+.contact-grid,
+.about-grid,
+.feedback-grid,
+.login-grid,
+.service-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.feature-card,
+.contact-card,
+.about-card,
+.feedback-card,
+.login-card,
+.service-card,
+.stat-card,
+.info-card {
+    flex: 1 1 220px;
+    background: #fff7f9;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #edcbd5;
+    box-shadow: 0 3px 10px #e3c3cc;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+.contact-header,
+.feedback-header,
+.about-header,
+.faq-header,
+.dashboard-header {
+    text-align: center;
+    padding: 25px;
+    background: #fff7f9;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.contact-options,
+.contact-form-section,
+.office-info,
+.emergency-contact,
+.feedback-content,
+.feedback-benefits,
+.about-content,
+.mission-section,
+.vision-section,
+.features-section,
+.about-values,
+.faq-section,
+.dashboard-card {
+    background: #fff7f9;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border: 1px solid #edcbd5;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #6d1f3a;
+    color: white;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #d8b4bf;
+}
+
+tr:nth-child(even) {
+    background: #fceff2;
+}
+
+.faq-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #e3c6cf;
+}
+
+.faq-item h3 {
+    color: #8f3453;
+}
+
+.faq-categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.faq-categories a {
+    background: #fff7f9;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #dfbbc6;
+}
+
+.stats-grid,
+.quick-access {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stat-card,
+.quick-card {
+    flex: 1 1 180px;
+    text-align: center;
+    background: #fff7f9;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #edcbd5;
+}
+
+.academic-header {
+    text-align: center;
+    padding: 30px;
+    background: #fff7f9;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.academic-card {
+    background: #fff7f9;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border: 1px solid #edcbd5;
+    overflow-x: auto;
+}
+
+.academic-card h2 {
+    margin-bottom: 20px;
+}
+
+.academic-card table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+}
+
+.academic-card th {
+    background: #6d1f3a;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.academic-card td {
+    padding: 12px;
+    border: 1px solid #d8b4bf;
+}
+
+.academic-card tr:nth-child(even) {
+    background: #fceff2;
+}
+
+.academic-card p {
+    line-height: 1.6;
+}
+
+.academic-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tool-card {
+    flex: 1 1 220px;
+    padding: 20px;
+    background: #fff7f9;
+    border: 1px solid #edcbd5;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.tool-card h3 {
+    margin-bottom: 10px;
+}
+
+.contact-form-section input,
+.contact-form-section textarea,
+.contact-form-section select,
+.feedback-content input,
+.feedback-content textarea,
+.feedback-content select,
+.register-form input {
+    width: 100%;
+}
+
+.register-form {
+    background: #fff7f9;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.register-form form {
+    margin-top: 20px;
+}
+
+.login-form {
+    background: #fff7f9;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+footer {
+    background: #4d172b;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+footer h3 {
+    color: white;
+}
+
+footer p {
+    color: #f4cbd6;
+}
+
+footer a {
+    color: #f4cbd6;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(60, 15, 30, 0.55);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-box {
+    background: #fff7f9;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.why-section {
+    text-align: center ;
+}
+
+.why-content {
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+    width: 100%;
+    text-align: center;
+    gap: 60px;
+}
+
+.why-content div {
+    width: 200px;
+    text-align: center ;
+}
+
+.cta-section {
+    text-align: center;
+}
+.student-profile {
+    background: #fff7f9;
+    padding: 25px;
+    border: 1px solid #edcbd5;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px #e3c3cc;
+}
+
+.profile-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.profile-details div {
+    flex: 1 1 180px;
+    background: #fceff2;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.profile-details p {
+    margin-top: 8px;
+}
+
+.profile-details div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 12px #d6a6b5;
+}
+.subject-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.subject-card {
+    flex: 1 1 250px;
+    padding: 20px;
+    background: #fff7f9;
+    border: 1px solid #edcbd5;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px #e3c3cc;
+}
+
+.subject-card p {
+    margin: 8px 0;
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+}
+.upcoming-events {
+    background: #fff7f9;
+    padding: 25px;
+    border: 1px solid #edcbd5;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+#event-list {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #edcbd5;
+    border-radius: 8px;
+}
+.dark {
+    background: #2b1820;
+    color: #f8e8ed;
+}
+
+.dark .hero,
+.dark .feature-card,
+.dark .about-card,
+.dark .contact-card,
+.dark .feedback-card,
+.dark .dashboard-card,
+.dark .academic-card,
+.dark .tool-card,
+.dark .login-section,
+.dark .register-section {
+    background: #43232f;
+    color: #f8e8ed;
+}
+
+.dark h1,
+.dark h2,
+.dark h3 {
+    color: #f4c5d2;
+}
+
+.dark p {
+    color: #f5dce3;
+}
+
+.dark a {
+    color: #f4a9bd;
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+    background: #351e27;
+    color: white;
+    border-color: #8f3453;
+}
+@media (max-width: 800px) {
+    .navbar,
+    .hero,
+    .login-section,
+    .register-section {
+        flex-direction: column;
+    }
+
+    .navbar nav {
+        justify-content: center;
+    }
+
+    .hero,
+    .login-section,
+    .register-section {
+        text-align: center;
+    }
+
+    main {
+        width: 94%;
+    }
+
+    .academic-card {
+        padding: 15px;
+    }
+
+    .academic-tools {
+        flex-direction: column;
+    }
+    
+}
